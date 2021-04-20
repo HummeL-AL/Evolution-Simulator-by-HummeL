@@ -1,0 +1,66 @@
+Language name:Русский
+
+New Text:Новый Текст
+
+Item Viewer:Инспектор
+World Settings:Настройки мира
+Global Settings:Глобальные настройки
+Time Scale:Ускорение времени
+May working uncorrect:Работает не стабильно!
+
+Position:Позиция
+Image:Изображение
+Coloration:Расцветка
+
+PhysicHealth:Здоровье
+MaxPhysicHealth:Макс. здоровье
+AttackStrength:Сила атаки
+AttackCooldown:Откат атаки
+AttackRange:Дальность атаки
+MinEnergyForAttack:Мин. энергия атаки
+AttackEnergy:Затраты на атаку
+FoodRadius:Радиус еды
+EnemyRadius:Радиус врагов
+FriendlyRadius:Радиус союзников
+EnemyTolerance:Восприимчивость к врагам
+SpeedOfRotation:Скорость поворота
+SpeedOfMove:Скорость движения
+CloseDistance:Близкая дистанция
+FarDistance:Большая дистанция
+EnergyFromSun:Энергия от солнца
+CurrentEnergy:Текущая энергия
+MaxEnergy:Максимальная энергия
+EnergyForSeparation:Энергии для деления
+SeparationValue:Затраты на деление
+ChanceOfMutation:Шанс мутации
+SmallMutationRange:Маленький диапазон
+MediumMutationRange:Средний диапазон
+BigMutationRange:Большой диапазон
+Generation:Поколение
+Priorities:Приоритеты
+EdibleFood:Съедобная еда
+ConditionsReactions:Реакция на условия
+
+EnergyValue:Питательные свойства
+
+HBorder:Горизонтальный размер
+VBorder:Вертикальный размер
+MaxFood:Максимум еды
+SpawnRatio:Соотношение кол-ва еды
+BaseEnergy:Базовая энергия
+EnergyCoefficients:Коэфициенты энергии
+BaseHeal:Базовое лечение
+HealCoefficients:Коэфициенты лечения
+LightMapScale:Увеличение карты света
+LightMapMoving:Движение света
+
+ShortRateTimer:Таймер короткого шага
+LongRateTimer:Таймер длинного шага
+ChoosedTranslationID:Язык(ID)
+
+Meat:Мясо
+Plant:Растения
+Mineral:Минералы
+Mollusk:Моллюск
+Corpse:Трупы
+Sunlight:Свет

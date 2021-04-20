@@ -1,0 +1,66 @@
+Language name:English
+
+New Text:New Text
+
+Item Viewer:Item Viewer
+World Settings:World Settings
+Global Settings:Global Settings
+Time Scale:Time Scale
+May working uncorrect:May working uncorrect
+
+Position:Position
+Image:Image
+Coloration:Coloration
+
+PhysicHealth:PhysicHealth
+MaxPhysicHealth:MaxPhysicHealth
+AttackStrength:AttackStrength
+AttackCooldown:AttackCooldown
+AttackRange:AttackRange
+MinEnergyForAttack:MinEnergyForAttack
+AttackEnergy:AttackEnergy
+FoodRadius:FoodRadius
+EnemyRadius:EnemyRadius
+FriendlyRadius:FriendlyRadius
+EnemyTolerance:EnemyTolerance
+SpeedOfRotation:SpeedOfRotation
+SpeedOfMove:SpeedOfMove
+CloseDistance:CloseDistance
+FarDistance:FarDistance
+EnergyFromSun:EnergyFromSun
+CurrentEnergy:CurrentEnergy
+MaxEnergy:MaxEnergy
+EnergyForSeparation:EnergyForSeparation
+SeparationValue:SeparationValue
+ChanceOfMutation:ChanceOfMutation
+SmallMutationRange:SmallMutationRange
+MediumMutationRange:MediumMutationRange
+BigMutationRange:BigMutationRange
+Generation:Generation
+Priorities:Priorities
+EdibleFood:EdibleFood
+ConditionsReactions:ConditionsReactions
+
+EnergyValue:EnergyValue
+
+HBorder:HBorder
+VBorder:VBorder
+MaxFood:MaxFood
+SpawnRatio:SpawnRatio
+BaseEnergy:BaseEnergy
+EnergyCoefficients:EnergyCoefficients
+BaseEnergy:HealEnergy
+HealCoefficients:HealCoefficients
+LightMapScale:LightMapScale
+LightMapMoving:LightMapMoving
+
+ShortRateTimer:ShortRateTimer
+LongRateTimer:LongRateTimer
+ChoosedTranslationID:ChoosedTranslationID
+
+Meat:Meat
+Plant:Plant
+Mineral:Mineral
+Mollusk:Mollusk
+Corpse:Corpse
+Sunlight:Sunlight

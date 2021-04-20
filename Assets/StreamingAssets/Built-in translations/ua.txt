@@ -1,0 +1,66 @@
+Language name:Українська
+
+New Text:Новий Текст
+
+Item Viewer:Переглядач
+World Settings:Налаштування середовища
+Global Settings:Глобальні налаштування
+Time Scale:Прискорення часу
+May working uncorrect:Можлива нестабільність!
+
+Position:Позиція
+Image:Зображення
+Coloration:Забарвлення
+
+PhysicHealth:Здоров'я
+MaxPhysicHealth:Макс. здоров'я
+AttackStrength:Сила атаки
+AttackCooldown:Відкат атаки
+AttackRange:Дальність атаки
+MinEnergyForAttack:Мін. енергія атаки
+AttackEnergy:Затрати на атаку
+FoodRadius:Радіус їжі
+EnemyRadius:Радіус ворогів
+FriendlyRadius:Радіус союзників
+EnemyTolerance:Ворожість
+SpeedOfRotation:Швидкість повороту
+SpeedOfMove:Швидкість руху
+CloseDistance:Близька дистанція
+FarDistance:Велика дистанція
+EnergyFromSun:Енергія від сонця
+CurrentEnergy:Поточна енергія
+MaxEnergy:Максимальна енергія
+EnergyForSeparation:Енергія для ділення
+SeparationValue:Затрати на ділення
+ChanceOfMutation:Шанс мутації
+SmallMutationRange:Маленький діапазон
+MediumMutationRange:Середній діапазон
+BigMutationRange:Великий діапазон
+Generation:Покоління
+Priorities:Пріоритети
+EdibleFood:Їстівна їжа
+ConditionsReactions:Реакція на оточення
+
+EnergyValue:Енергетична цінність
+
+HBorder:Горизонтальний розмір
+VBorder:Вертикальний розмір
+MaxFood:Максимум їжі
+SpawnRatio:Співвідношення їжі
+BaseEnergy:Базова енергія
+EnergyCoefficients:Коеффіцієнти енергії
+BaseHeal:Базове лікування
+HealCoefficients:Коеффіцієнти лікування
+LightMapScale:Приближення карти освітленності
+LightMapMoving:Рух світла
+
+ShortRateTimer:Таймер з коротким кроком
+LongRateTimer:Таймер з довгим кроком
+ChoosedTranslationID:Мова(ID)
+
+Meat:М'ясо
+Plant:Рослини
+Mineral:Мінерали
+Mollusk:Молюск
+Corpse:Падаль
+Sunlight:Світло
