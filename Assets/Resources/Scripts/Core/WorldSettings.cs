@@ -158,13 +158,13 @@ public class WorldSettings : MonoBehaviour
             SpawnRatio[i] = 1;
         }
 
-        EnergyCoefficients = new int[foodsList.Count];
+        EnergyCoefficients = new int[edibleFoodsList.Count + absorbableFoodsList.Count];
         for (int i = 0; i < EnergyCoefficients.Length; i++)
         {
             EnergyCoefficients[i] = 1;
         }
 
-        HealCoefficients = new int[foodsList.Count];
+        HealCoefficients = new int[edibleFoodsList.Count + absorbableFoodsList.Count];
         for (int i = 0; i < HealCoefficients.Length; i++)
         {
             HealCoefficients[i] = 1;

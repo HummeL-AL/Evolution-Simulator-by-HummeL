@@ -15,6 +15,16 @@ public class FoodVariables : VisibleVariables
             linkedFood.energyValue = value;
         }
     }
+
+    [SerializeField]
+    public float HealValue
+    {
+        get => linkedFood.healValue;
+        set
+        {
+            linkedFood.healValue = value;
+        }
+    }
     // Start is called before the first frame update
     private void Awake()
     {

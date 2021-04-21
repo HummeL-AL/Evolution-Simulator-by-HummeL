@@ -18,6 +18,7 @@ public class FoodSpawner : MonoBehaviour
     public WorldSettings worldSettings;
 
     public static List<Type> foodsList = new List<Type>();
+    public static List<Type> absorbableFoodsList = new List<Type>();
     public static List<Type> edibleFoodsList = new List<Type>();
     public static Sprite[] foodSprites;
     public static Sprite[] foodSpawnerSprites;
@@ -38,19 +39,19 @@ public class FoodSpawner : MonoBehaviour
 
         foreach (Type type in types)
         {
-            if (type != typeof(Corpse))
+            if (type.BaseType == typeof(EdibleFood) && !foodsList.Contains(type) && !edibleFoodsList.Contains(type))
             {
-                if (type.BaseType == typeof(EdibleFood) && !foodsList.Contains(type) && !edibleFoodsList.Contains(type))
+                foodsList.Add(type);
+                if (type != typeof(Corpse))
                 {
-                    foodsList.Add(type);
                     edibleFoodsList.Add(type);
-
                 }
+            }
 
-                if (type.BaseType == typeof(AbsorbableFood) && !foodsList.Contains(type))
-                {
-                    foodsList.Add(type);
-                }
+            if (type.BaseType == typeof(AbsorbableFood) && !foodsList.Contains(type) && !absorbableFoodsList.Contains(type))
+            {
+                foodsList.Add(type);
+                absorbableFoodsList.Add(type);
             }
         }
     }

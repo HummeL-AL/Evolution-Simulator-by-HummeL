@@ -42,6 +42,7 @@ EdibleFood:Съедобная еда
 ConditionsReactions:Реакция на условия
 
 EnergyValue:Питательные свойства
+HealValue:Лечебные свойства
 
 HBorder:Горизонтальный размер
 VBorder:Вертикальный размер

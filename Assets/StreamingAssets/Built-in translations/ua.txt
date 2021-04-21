@@ -42,6 +42,7 @@ EdibleFood:Їстівна їжа
 ConditionsReactions:Реакція на оточення
 
 EnergyValue:Енергетична цінність
+HealValue:Лікувальна цінність
 
 HBorder:Горизонтальний розмір
 VBorder:Вертикальний розмір

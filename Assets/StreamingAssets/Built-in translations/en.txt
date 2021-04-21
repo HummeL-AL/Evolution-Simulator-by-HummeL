@@ -42,6 +42,7 @@ EdibleFood:EdibleFood
 ConditionsReactions:ConditionsReactions
 
 EnergyValue:EnergyValue
+HealValue:HealValue
 
 HBorder:HBorder
 VBorder:VBorder
@@ -49,7 +50,7 @@ MaxFood:MaxFood
 SpawnRatio:SpawnRatio
 BaseEnergy:BaseEnergy
 EnergyCoefficients:EnergyCoefficients
-BaseEnergy:HealEnergy
+BaseHeal:BaseHeal
 HealCoefficients:HealCoefficients
 LightMapScale:LightMapScale
 LightMapMoving:LightMapMoving
