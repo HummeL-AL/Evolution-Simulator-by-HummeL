@@ -46,6 +46,7 @@ HealValue:Лечебные свойства
 
 HBorder:Горизонтальный размер
 VBorder:Вертикальный размер
+FoodSpawnTime:Время появления еды
 MaxFood:Максимум еды
 SpawnRatio:Соотношение кол-ва еды
 BaseEnergy:Базовая энергия

@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using System.Text;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,6 +60,21 @@ public class Service
         UpdateAllTranslates();
     }
 
+    public static bool FilesEqual(string firstFilePath, string secondFilePath)
+    {
+        byte[] bytes1 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(File.ReadAllText(firstFilePath)));
+        byte[] bytes2 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(File.ReadAllText(secondFilePath)));
+
+        if (Encoding.ASCII.GetChars(bytes1).SequenceEqual(Encoding.ASCII.GetChars(bytes2)))
+        {
+            return true; 
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public static void UpdateAllTranslates()
     {
         foreach (TranslatedText toTranslate in Resources.FindObjectsOfTypeAll<TranslatedText>())
@@ -83,21 +100,52 @@ public class Service
     {
         if (!Directory.Exists(path))
         {
-            Directory.CreateDirectory(path);
-            CheckCopyBuiltinTranslations();
+            Directory.CreateDirectory(path);   
         }
+        CheckCopyBuiltinTranslations();
     }
 
     public static void CheckCopyBuiltinTranslations()
     {
-        DirectoryInfo d = new DirectoryInfo(Path.Combine(Application.streamingAssetsPath, "Built-in translations"));
-        if(Directory.GetFiles(pathToTranslationFolder).Length == 0)
+        string builtinTranslationsPath = Path.Combine(Application.streamingAssetsPath, "Built-in translations");
+        DirectoryInfo b = new DirectoryInfo(pathToTranslationFolder);
+        DirectoryInfo d = new DirectoryInfo(builtinTranslationsPath);
+
+        foreach (FileInfo primaryFileInfo in d.GetFiles())
         {
-            foreach (FileInfo fileInfo in d.GetFiles())
+            if(primaryFileInfo.Extension != ".meta")
             {
-                if (fileInfo.Extension != ".meta")
+                bool exists = false;
+                bool equal = false;
+                FileInfo existingFile = null;
+
+                foreach(FileInfo secondaryFileInfo in b.GetFiles())
                 {
-                    fileInfo.CopyTo(Path.Combine(pathToTranslationFolder, fileInfo.Name));
+                    if(primaryFileInfo.Name == secondaryFileInfo.Name)
+                    {
+                        exists = true;
+                        existingFile = secondaryFileInfo;
+                        if (FilesEqual(Path.Combine(primaryFileInfo.DirectoryName, primaryFileInfo.Name), Path.Combine(secondaryFileInfo.DirectoryName, secondaryFileInfo.Name)))
+                        {
+                            equal = true;
+                        }
+                        break;
+                    }
+                }
+
+                if (!exists)
+                {
+                    primaryFileInfo.CopyTo(Path.Combine(pathToTranslationFolder, primaryFileInfo.Name));
+                    
+                }
+                else
+                {
+                    if(!equal)
+                    {
+                        File.Delete(Path.Combine(existingFile.DirectoryName, existingFile.Name));
+                        primaryFileInfo.CopyTo(Path.Combine(pathToTranslationFolder, primaryFileInfo.Name));
+                        
+                    }
                 }
             }
         }

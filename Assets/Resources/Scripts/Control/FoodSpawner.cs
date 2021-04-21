@@ -10,8 +10,6 @@ using Random = UnityEngine.Random;
 public class FoodSpawner : MonoBehaviour
 {
     public static int curFood = 0;
-    public float cooldown;
-    public static float timer = 0;
     public static float[] spawnPercentage;
     public static float totalValue;
     public GameObject foodPrefab;
@@ -104,6 +102,52 @@ public class FoodSpawner : MonoBehaviour
         }
     }
 
+    public void SpawnFood()
+    {
+        if (curFood < maxFood)
+        {
+            float spawnX = Random.Range(-hBorder, hBorder);
+            float spawnY = 0f;
+            switch (worldSettings.worldType)
+            {
+                case WorldSettings.WorldType.square:
+                    {
+                        spawnY = Random.Range(-vBorder, vBorder);
+                        break;
+                    }
+                case WorldSettings.WorldType.circle:
+                    {
+                        float secondVBorder = Mathf.Sqrt(Mathf.Pow(vBorder, 2) * (-(Mathf.Pow(spawnX, 2) / Mathf.Pow(hBorder, 2)) + 1));
+                        spawnY = Random.Range(-secondVBorder, secondVBorder);
+                        break;
+                    }
+            }
+
+            Vector3 spawnPos = new Vector3(spawnX, spawnY);
+            Quaternion spawnRot = Quaternion.Euler(new Vector3(0, 0, Random.Range(-360f, 360f)));
+            GameObject spawnedFood = Instantiate(foodPrefab, spawnPos, spawnRot);
+
+            float foodChooser = Random.Range(0f, 1f);
+            float previousPercent = 0;
+
+            for (int i = 0; i < spawnPercentage.Length; i++)
+            {
+                if (foodChooser > spawnPercentage[i] + previousPercent)
+                {
+                    previousPercent += spawnPercentage[i];
+                }
+                else
+                {
+                    spawnedFood.GetComponent<Food>().sort = (TypesOfFood)i;
+                    previousPercent = 0;
+                    break;
+                }
+            }
+
+            curFood++;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,65 +158,11 @@ public class FoodSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //Debug.Log(curFood);
-       // int i = 0;
-       // foreach(Food food in GameObject.FindObjectsOfType<Food>())
-       // {
-       //     i++;
-       // }
-       // Debug.Log(i);
+
     }
 
     void FixedUpdate()
     {
-        if (curFood < maxFood)
-        {
-            if (timer <= 0)
-            {
-                float spawnX = Random.Range(-hBorder, hBorder);
-                float spawnY = 0f;
-                switch (worldSettings.worldType)
-                {
-                    case WorldSettings.WorldType.square:
-                        {
-                            spawnY = Random.Range(-vBorder, vBorder);
-                            break;
-                        }
-                    case WorldSettings.WorldType.circle:
-                        {
-                            float secondVBorder = Mathf.Sqrt(Mathf.Pow(vBorder, 2) * (-(Mathf.Pow(spawnX, 2) / Mathf.Pow(hBorder, 2)) + 1));
-                            spawnY = Random.Range(-secondVBorder, secondVBorder);
-                            break;
-                        }
-                }
-
-                Vector3 spawnPos = new Vector3(spawnX, spawnY);
-                Quaternion spawnRot = Quaternion.Euler(new Vector3(0, 0, Random.Range(-360f, 360f)));
-                GameObject spawnedFood = Instantiate(foodPrefab, spawnPos, spawnRot);
-
-                float foodChooser = Random.Range(0f, 1f);
-                float previousPercent = 0;
-
-                for (int i = 0; i < spawnPercentage.Length; i++)
-                {
-                    if (foodChooser > spawnPercentage[i] + previousPercent)
-                    {
-                        previousPercent += spawnPercentage[i];
-                    }
-                    else
-                    {
-                        spawnedFood.GetComponent<Food>().sort = (TypesOfFood)i;
-                        previousPercent = 0;
-                        break;
-                    }
-                }
-
-                curFood++;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
-        }
+        
     }
 }

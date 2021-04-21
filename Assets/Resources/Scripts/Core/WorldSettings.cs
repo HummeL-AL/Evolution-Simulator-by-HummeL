@@ -10,6 +10,7 @@ public class WorldSettings : MonoBehaviour
 {
     public static float hBorder = 150;
     public static float vBorder = 150;
+    public static float foodSpawnTime = 0.1f;
     public static float maxFood = 600;
 
     public static int[] spawnRatio;
@@ -24,6 +25,7 @@ public class WorldSettings : MonoBehaviour
     public static bool initializingEnded = false;
 
     public GameObject worldSettingsPanel;
+    public FoodSpawner foodSpawner;
     public EnergyMapGenerator mapGenerator;
 
     public enum WorldType { square, circle };
@@ -61,6 +63,18 @@ public class WorldSettings : MonoBehaviour
         set
         {
             maxFood = value;
+        }
+    }
+
+    [SerializeField]
+    public float FoodSpawnTime
+    {
+        get => foodSpawnTime;
+        set
+        {
+            foodSpawner.CancelInvoke("SpawnFood");
+            foodSpawnTime = value;
+            foodSpawner.InvokeRepeating("SpawnFood", 0f, foodSpawnTime);
         }
     }
 
