@@ -39,11 +39,11 @@ public class BacteriaChooser : MonoBehaviour
     {
         if (inspectionPanelActive)
         {
-            UpdateInpectionPanel();
+            StartCoroutine(UpdateInpectionPanel());
         }
     }
 
-    void UpdateInpectionPanel()
+    IEnumerator UpdateInpectionPanel()
     {
         if (choosedItem)
         {
@@ -51,6 +51,7 @@ public class BacteriaChooser : MonoBehaviour
             {
                 Destroy(toTrash.gameObject);
             }
+            yield return new WaitForEndOfFrame();
 
             previewPanel.GetComponent<ItemPreview>().UpdateSpriteRenderers();
             GetVariablesToPanel(choosedItem, inspectionPanel, previewPanel);

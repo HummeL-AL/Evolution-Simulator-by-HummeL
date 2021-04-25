@@ -29,9 +29,7 @@ public class CustomGrid : MonoBehaviour
             {
                 child.GetComponent<CustomGrid>().PlaceElements();
             }
-            Debug.Log("Panel height: " + tempPanelHeight + " Child height: " + child.GetComponent<RectTransform>().sizeDelta.y);
             tempPanelHeight += child.GetComponent<RectTransform>().sizeDelta.y + upperOffset + downOffset;
-            Debug.Log("Second panel height: " + tempPanelHeight);
         }
 
         panelHeight = tempPanelHeight;
