@@ -21,7 +21,7 @@ public class FunctionsController : MonoBehaviour
 
     public static void GetVariables(GameObject objectToInspect, GameObject configPanel)
     {
-        Grid grid = configPanel.GetComponent<Grid>();
+        CustomGrid grid = configPanel.GetComponent<CustomGrid>();
         grid.enabled = false;
         Component[] objectComponents = objectToInspect.GetComponents(typeof(Component));
         foreach (var component in objectComponents)
@@ -118,7 +118,7 @@ public class FunctionsController : MonoBehaviour
             }
         }
         grid.enabled = true;
-        grid.OnTransformChildrenChanged();
+        grid.PlaceElements();
     }
 
     public static void GetVariablesToPanel(GameObject objectToInspect, GameObject configPanel, GameObject previewPanel)

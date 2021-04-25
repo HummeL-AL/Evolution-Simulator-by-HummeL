@@ -15,10 +15,4 @@ public class Meat : EdibleFood
     {
         base.Start();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -62,8 +62,8 @@ public class Service
 
     public static bool FilesEqual(string firstFilePath, string secondFilePath)
     {
-        byte[] bytes1 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(File.ReadAllText(firstFilePath)));
-        byte[] bytes2 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(File.ReadAllText(secondFilePath)));
+        byte[] bytes1 = Encoding.Convert(Encoding.GetEncoding("utf-8"), Encoding.ASCII, Encoding.GetEncoding("utf-8").GetBytes(File.ReadAllText(firstFilePath)));
+        byte[] bytes2 = Encoding.Convert(Encoding.GetEncoding("utf-8"), Encoding.ASCII, Encoding.GetEncoding("utf-8").GetBytes(File.ReadAllText(secondFilePath)));
 
         if (Encoding.ASCII.GetChars(bytes1).SequenceEqual(Encoding.ASCII.GetChars(bytes2)))
         {

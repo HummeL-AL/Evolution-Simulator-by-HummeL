@@ -16,6 +16,7 @@ public class Food : MonoBehaviour
     public SpriteRenderer spr;
 
     public bool foodTypeChanged = false;
+    public bool spawned = false;
     // Start is called before the first frame update
     public virtual void Awake()
     {

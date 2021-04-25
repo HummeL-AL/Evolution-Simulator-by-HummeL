@@ -50,17 +50,6 @@ public class GlobalSettings : MonoBehaviour
         UpdatePanel();
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdatePanel()
     {
         foreach (Transform toTrash in globalSettingsPanel.transform)

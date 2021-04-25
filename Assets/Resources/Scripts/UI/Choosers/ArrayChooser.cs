@@ -16,19 +16,18 @@ public class ArrayChooser : Chooser
     public int id;
 
     public RectTransform chooserRect;
+    public CustomGrid chooserGrid;
     void Awake()
     {
-        chooserRect = transform.GetComponent<RectTransform>();
+        chooserRect = GetComponent<RectTransform>();
+        chooserGrid = GetComponent<CustomGrid>();
     }
     // Start is called before the first frame update
     void Start()
     {
         SetText();
-
-        //Debug.Log("Property: " + property + " Value: " + property.GetValue(component) + " Type: " + property.PropertyType.Name);
-        //Debug.Log(property.GetValue(component));
-
-
+        
+        chooserGrid.enabled = true;
     }
 
     public void SetText()
@@ -37,6 +36,10 @@ public class ArrayChooser : Chooser
         {
             transform.GetChild(0).GetComponent<TranslatedText>().originalText = property.Name;
             transform.GetChild(0).GetComponent<TranslatedText>().text = GetTranslatableText(property.Name);
+        }
+        else
+        {
+            Destroy(transform.GetChild(0).gameObject);
         }
     }
 
@@ -57,14 +60,9 @@ public class ArrayChooser : Chooser
                             chooser.id = number;
                             chooser.SetText();
 
-                            if (chooserRect)
-                            {
-                                chooserRect.sizeDelta += new Vector2(0f, arrayNumberChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
-                            }
-                            else
+                            if (!chooserRect)
                             {
                                 chooserRect = transform.GetComponent<RectTransform>();
-                                chooserRect.sizeDelta += new Vector2(0f, arrayNumberChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
                             }
                         }
                         break;
@@ -86,14 +84,9 @@ public class ArrayChooser : Chooser
                             chooser.id = number;
                             chooser.SetText();
 
-                            if (chooserRect)
-                            {
-                                chooserRect.sizeDelta += new Vector2(0f, arrayTypeChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
-                            }
-                            else
+                            if (!chooserRect)
                             {
                                 chooserRect = transform.GetComponent<RectTransform>();
-                                chooserRect.sizeDelta += new Vector2(0f, arrayTypeChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
                             }
                         }
                         break;
@@ -112,14 +105,9 @@ public class ArrayChooser : Chooser
                             chooser.SetChoosers();
                             chooser.SetText();
 
-                            if (chooserRect)
-                            {
-                                chooserRect.sizeDelta += new Vector2(0f, arrayChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
-                            }
-                            else
+                            if (!chooserRect)
                             {
                                 chooserRect = transform.GetComponent<RectTransform>();
-                                chooserRect.sizeDelta += new Vector2(0f, arrayChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
                             }
                         }
                         break;
@@ -141,23 +129,12 @@ public class ArrayChooser : Chooser
                 chooser.id = number;
                 chooser.SetText();
 
-                if (chooserRect)
-                {
-                    chooserRect.sizeDelta += new Vector2(0f, arrayNumberChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
-                }
-                else
+                if (!chooserRect)
                 {
                     chooserRect = transform.GetComponent<RectTransform>();
-                    chooserRect.sizeDelta += new Vector2(0f, arrayNumberChooser.gameObject.transform.GetComponent<RectTransform>().sizeDelta.y);
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdateArray()

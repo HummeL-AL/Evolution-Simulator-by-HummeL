@@ -9,7 +9,8 @@ using Random = UnityEngine.Random;
 
 public class FoodSpawner : MonoBehaviour
 {
-    public static int curFood = 0;
+    public static int curSpawnedFood = 0;
+    public static int curAllFood = 0;
     public static float[] spawnPercentage;
     public static float totalValue;
     public GameObject foodPrefab;
@@ -104,7 +105,7 @@ public class FoodSpawner : MonoBehaviour
 
     public void SpawnFood()
     {
-        if (curFood < maxFood)
+        if (curSpawnedFood < maxSpawnedFood)
         {
             float spawnX = Random.Range(-hBorder, hBorder);
             float spawnY = 0f;
@@ -138,13 +139,16 @@ public class FoodSpawner : MonoBehaviour
                 }
                 else
                 {
-                    spawnedFood.GetComponent<Food>().sort = (TypesOfFood)i;
+                    Food createdFood = spawnedFood.GetComponent<Food>();
+                    createdFood.spawned = true;
+                    createdFood.sort = (TypesOfFood)i;
                     previousPercent = 0;
                     break;
                 }
             }
 
-            curFood++;
+            curAllFood++;
+            curSpawnedFood++;
         }
     }
 
@@ -153,16 +157,5 @@ public class FoodSpawner : MonoBehaviour
     {
         spawnPercentage = new float[spawnRatio.Length];
         UpdatePercentages();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void FixedUpdate()
-    {
-        
     }
 }

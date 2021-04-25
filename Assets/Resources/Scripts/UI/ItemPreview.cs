@@ -8,11 +8,6 @@ public class ItemPreview : MonoBehaviour
 {
     Image previewImage;
     SpriteRenderer spr;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void UpdateSpriteRenderers()
     {

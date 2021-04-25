@@ -24,12 +24,6 @@ public class EnergyMapGenerator : MonoBehaviour
         GenerateMap();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdateOffset()
     {
         xOffset = Time.time;

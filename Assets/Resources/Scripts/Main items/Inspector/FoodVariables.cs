@@ -30,14 +30,4 @@ public class FoodVariables : VisibleVariables
     {
         linkedFood = gameObject.GetComponent<Food>();
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

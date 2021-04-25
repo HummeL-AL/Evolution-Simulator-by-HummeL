@@ -7,22 +7,11 @@ using static Service;
 
 public class BoolChooser : Chooser
 {
-    private void Awake()
-    {
-        
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         SetText();
         transform.GetChild(1).GetComponent<Toggle>().isOn = (bool)property.GetValue(component, null);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void SetText()

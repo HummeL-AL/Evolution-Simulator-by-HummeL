@@ -16,12 +16,6 @@ public class ArrayNumberChooser : ArrayElementChooser
         chooserInput = transform.GetChild(0).GetComponent<InputField>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetText()
     {
         if (chooserInput)

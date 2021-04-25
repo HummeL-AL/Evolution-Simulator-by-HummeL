@@ -14,12 +14,6 @@ public class NumberChooser : Chooser
         transform.GetChild(1).GetComponent<InputField>().text = property.GetValue(component, null).ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetText()
     {
         transform.GetChild(0).GetComponent<TranslatedText>().originalText = property.Name;

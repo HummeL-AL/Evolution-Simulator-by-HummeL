@@ -33,16 +33,4 @@ public class VisibleVariables : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = value;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

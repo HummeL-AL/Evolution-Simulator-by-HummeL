@@ -47,7 +47,8 @@ HealValue:HealValue
 HBorder:HBorder
 VBorder:VBorder
 FoodSpawnTime:FoodSpawnTime
-MaxFood:MaxFood
+MaxSpawnedFood:MaxSpawnedFood
+MaxAllFood:MaxAllFood
 SpawnRatio:SpawnRatio
 BaseEnergy:BaseEnergy
 EnergyCoefficients:EnergyCoefficients

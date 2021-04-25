@@ -9,10 +9,4 @@ public class Sunlight : AbsorbableFood
     {
         base.Start();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

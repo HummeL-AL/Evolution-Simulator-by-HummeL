@@ -21,16 +21,6 @@ public class ArrayStringChooser : ArrayElementChooser
         SetText();
     }
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnDisable()
     {
         SetText();
@@ -67,7 +57,6 @@ public class ArrayStringChooser : ArrayElementChooser
             linkedChooser.list.Add(foodsList[0]);
             GameObject arrayTypeChooser = Instantiate(UIs[3], transform.parent);
 
-            linkedChooser.chooserRect.sizeDelta += new Vector2(0f, 45f);
             ArrayTypeChooser chooser = arrayTypeChooser.GetComponent<ArrayTypeChooser>();
 
             chooser.linkedChooser = linkedChooser;

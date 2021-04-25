@@ -21,12 +21,6 @@ public class EdibleFood : Food
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public virtual void Eaten(GameObject eater)
     {
         if (foodTypeChanged)
@@ -53,7 +47,11 @@ public class EdibleFood : Food
     {
         if (foodTypeChanged)
         {
-            curFood--;
+            if (spawned)
+            {
+                curSpawnedFood--;
+            }
+            curAllFood--;
         }
     }
 }

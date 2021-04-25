@@ -259,11 +259,12 @@ public class Bacteria : MonoBehaviour
         corpse.healValue = physicHealth + maxPhysicHealth * 0.1f;
         corpse.foodColor = GetComponent<SpriteRenderer>().color;
         corpse.sprite = GetComponent<SpriteRenderer>().sprite;
+        corpse.spawned = false;
 
         Destroy(gameObject.GetComponent<BacteriaVariables>());
         gameObject.AddComponent<FoodVariables>();
         
-        curFood++;
+        curAllFood++;
         Destroy(this);
     }
 

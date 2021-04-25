@@ -1,6 +1,6 @@
 Language name:Русский
 
-New Text:Новый Текст
+New Text:Новый текст
 
 Item Viewer:Инспектор
 World Settings:Настройки мира
@@ -47,7 +47,8 @@ HealValue:Лечебные свойства
 HBorder:Горизонтальный размер
 VBorder:Вертикальный размер
 FoodSpawnTime:Время появления еды
-MaxFood:Максимум еды
+MaxSpawnedFood:Максимум возобновляемой еды
+MaxAllFood:Максимум всей еды
 SpawnRatio:Соотношение кол-ва еды
 BaseEnergy:Базовая энергия
 EnergyCoefficients:Коэфициенты энергии

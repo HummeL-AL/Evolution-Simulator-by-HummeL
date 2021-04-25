@@ -13,10 +13,4 @@ public class Corpse : EdibleFood
     {
         base.Start();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

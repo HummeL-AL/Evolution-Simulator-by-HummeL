@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dispan : MonoBehaviour
+public class DispenserVariables : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

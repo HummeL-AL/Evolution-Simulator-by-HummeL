@@ -10,8 +10,11 @@ public class WorldSettings : MonoBehaviour
 {
     public static float hBorder = 150;
     public static float vBorder = 150;
-    public static float foodSpawnTime = 0.1f;
-    public static float maxFood = 600;
+    public static float foodSpawnTime = 0.01f;
+    public static float maxSpawnedFood = 600;
+    public static float maxAllFood = 1200;
+
+    public static float molluskReproductionTime = 50f;
 
     public static int[] spawnRatio;
     public static float baseEnergy = 10;
@@ -57,12 +60,22 @@ public class WorldSettings : MonoBehaviour
     }
 
     [SerializeField]
-    public float MaxFood
+    public float MaxSpawnedFood
     {
-        get => maxFood;
+        get => maxSpawnedFood;
         set
         {
-            maxFood = value;
+            maxSpawnedFood = value;
+        }
+    }
+
+    [SerializeField]
+    public float MaxAllFood
+    {
+        get => maxAllFood;
+        set
+        {
+            maxAllFood = value;
         }
     }
 
@@ -72,9 +85,12 @@ public class WorldSettings : MonoBehaviour
         get => foodSpawnTime;
         set
         {
-            foodSpawner.CancelInvoke("SpawnFood");
-            foodSpawnTime = value;
-            foodSpawner.InvokeRepeating("SpawnFood", 0f, foodSpawnTime);
+            if (initializingEnded)
+            {
+                foodSpawner.CancelInvoke("SpawnFood");
+                foodSpawnTime = value;
+                foodSpawner.InvokeRepeating("SpawnFood", 0f, foodSpawnTime);
+            }
         }
     }
 
@@ -191,12 +207,6 @@ public class WorldSettings : MonoBehaviour
     void Start()
     {
         initializingEnded = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdatePanel()

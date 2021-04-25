@@ -24,12 +24,6 @@ public class ArrayTypeChooser : ArrayElementChooser
         SetText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetText()
     {
         
@@ -60,14 +54,13 @@ public class ArrayTypeChooser : ArrayElementChooser
             linkedChooser.list.Add(foodsList[0]);
             GameObject arrayTypeChooser = Instantiate(UIs[3], transform.parent);
             
-            linkedChooser.chooserRect.sizeDelta += new Vector2(0f, 45f);
             ArrayTypeChooser chooser = arrayTypeChooser.GetComponent<ArrayTypeChooser>();
 
             chooser.linkedChooser = linkedChooser;
             chooser.id = linkedChooser.list.Count - 1;
             chooser.SetText();
 
-            transform.parent.parent.parent.GetComponent<Grid>().OnTransformChildrenChanged();
+            transform.parent.parent.parent.GetComponent<CustomGrid>().PlaceElements();
         }
     }
 }

@@ -13,12 +13,6 @@ public class AnimationStartButton : MonoBehaviour
         anim = objectToAnimate.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayAnimation()
     {
         inspectionPanelActive = !anim.GetBool("Was Played");

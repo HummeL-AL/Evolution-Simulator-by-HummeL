@@ -47,7 +47,8 @@ HealValue:Лікувальна цінність
 HBorder:Горизонтальний розмір
 VBorder:Вертикальний розмір
 FoodSpawnTime:Час появи їжі
-MaxFood:Максимум їжі
+MaxSpawnedFood:Максимум відновлювальної їжі
+MaxAllFood:Максимум все їжі
 SpawnRatio:Співвідношення їжі
 BaseEnergy:Базова енергія
 EnergyCoefficients:Коеффіцієнти енергії

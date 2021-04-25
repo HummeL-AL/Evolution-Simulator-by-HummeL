@@ -47,12 +47,6 @@ public class VectorChooser : Chooser
         activated = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetText()
     {
         transform.GetChild(0).GetComponent<TranslatedText>().originalText = property.Name;

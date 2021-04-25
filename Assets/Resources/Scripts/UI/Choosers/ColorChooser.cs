@@ -9,11 +9,6 @@ public class ColorChooser : Chooser
     private Color coloring;
     private bool activated = false;
     private Slider rSlider, gSlider, bSlider, aSlider;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        
-    }
 
     void Start()
     {
@@ -31,12 +26,6 @@ public class ColorChooser : Chooser
 
         activated = true;
         ChangeColor();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void SetText()
