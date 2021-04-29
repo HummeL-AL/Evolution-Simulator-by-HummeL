@@ -158,4 +158,9 @@ public class FoodSpawner : MonoBehaviour
         spawnPercentage = new float[spawnRatio.Length];
         UpdatePercentages();
     }
+
+    private void Update()
+    {
+        Debug.Log("Spawned: " + curSpawnedFood + " All:" + curAllFood);
+    }
 }

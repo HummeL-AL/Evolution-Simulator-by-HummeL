@@ -11,8 +11,8 @@ public class WorldSettings : MonoBehaviour
     public static float hBorder = 150;
     public static float vBorder = 150;
     public static float foodSpawnTime = 0.01f;
-    public static float maxSpawnedFood = 600;
-    public static float maxAllFood = 1200;
+    public static float maxSpawnedFood = 1500;
+    public static float maxAllFood = 2000;
 
     public static float molluskReproductionTime = 50f;
 
@@ -201,6 +201,7 @@ public class WorldSettings : MonoBehaviour
         }
 
         UpdatePanel();
+        foodSpawner.InvokeRepeating("SpawnFood", 0f, foodSpawnTime);
     }
 
     // Start is called before the first frame update

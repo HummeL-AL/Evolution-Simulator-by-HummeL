@@ -111,7 +111,7 @@ MonoBehaviour:
   vertical: 1
   cellWidth: 380
   upperOffset: 15
-  downOffset: 10
+  downOffset: 0
   spacing: 0
   panelHeight: 45
 --- !u!1 &1441852465811069046

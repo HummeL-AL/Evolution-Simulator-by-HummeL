@@ -255,11 +255,11 @@ public class Bacteria : MonoBehaviour
     {
         Food corpse = gameObject.AddComponent<Food>();
         corpse.sort = TypesOfFood.corpse;
+        corpse.spawned = false;
         corpse.energyValue = energy + maxEnergy * 0.1f;
         corpse.healValue = physicHealth + maxPhysicHealth * 0.1f;
         corpse.foodColor = GetComponent<SpriteRenderer>().color;
         corpse.sprite = GetComponent<SpriteRenderer>().sprite;
-        corpse.spawned = false;
 
         Destroy(gameObject.GetComponent<BacteriaVariables>());
         gameObject.AddComponent<FoodVariables>();
@@ -393,7 +393,7 @@ public class Bacteria : MonoBehaviour
         return;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<EdibleFood>())
         {

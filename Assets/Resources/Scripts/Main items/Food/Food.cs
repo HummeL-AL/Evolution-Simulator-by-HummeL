@@ -77,6 +77,7 @@ public class Food : MonoBehaviour
     public void SetVariables(Food food)
     {
         food.sort = sort;
+        food.spawned = spawned;
         food.energyValue = baseEnergy * energyCoefficients[(int)food.sort];
         food.healValue = baseHeal * healCoefficients[(int)food.sort];
     }
